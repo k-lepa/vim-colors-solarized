@@ -538,10 +538,10 @@ endif
 
 exe "hi! Normal"         .s:fmt_none   .s:fg_base0  .s:bg_back
 
-exe "hi! Comment"        .s:fmt_ital   .s:fg_base01 .s:bg_none
+hi! link Comment Normal
 "       *Comment         any comment
 
-exe "hi! Constant"       .s:fmt_none   .s:fg_cyan   .s:bg_none
+hi! link Constant Normal
 "       *Constant        any constant
 "        String          a string constant: "this is a string"
 "        Character       a character constant: 'c', '\n'
@@ -549,11 +549,11 @@ exe "hi! Constant"       .s:fmt_none   .s:fg_cyan   .s:bg_none
 "        Boolean         a boolean constant: TRUE, false
 "        Float           a floating point constant: 2.3e10
 
-exe "hi! Identifier"     .s:fmt_none   .s:fg_blue   .s:bg_none
+hi! link Identifier Normal
 "       *Identifier      any variable name
 "        Function        function name (also: methods for classes)
 "
-exe "hi! Statement"      .s:fmt_none   .s:fg_green  .s:bg_none
+hi! link Statement Normal
 "       *Statement       any statement
 "        Conditional     if, then, else, endif, switch, etc.
 "        Repeat          for, do, while, etc.
@@ -562,20 +562,20 @@ exe "hi! Statement"      .s:fmt_none   .s:fg_green  .s:bg_none
 "        Keyword         any other keyword
 "        Exception       try, catch, throw
 
-exe "hi! PreProc"        .s:fmt_none   .s:fg_orange .s:bg_none
+hi! link PreProc Normal
 "       *PreProc         generic Preprocessor
 "        Include         preprocessor #include
 "        Define          preprocessor #define
 "        Macro           same as Define
 "        PreCondit       preprocessor #if, #else, #endif, etc.
 
-exe "hi! Type"           .s:fmt_none   .s:fg_yellow .s:bg_none
+hi! link Type Normal
 "       *Type            int, long, char, etc.
 "        StorageClass    static, register, volatile, etc.
 "        Structure       struct, union, enum, etc.
 "        Typedef         A typedef
 
-exe "hi! Special"        .s:fmt_none   .s:fg_red    .s:bg_none
+hi! link Special Normal
 "       *Special         any special symbol
 "        SpecialChar     special character in a constant
 "        Tag             you can use CTRL-] on this
@@ -583,16 +583,16 @@ exe "hi! Special"        .s:fmt_none   .s:fg_red    .s:bg_none
 "        SpecialComment  special things inside a comment
 "        Debug           debugging statements
 
-exe "hi! Underlined"     .s:fmt_none   .s:fg_violet .s:bg_none
+hi! link Underlined Normal
 "       *Underlined      text that stands out, HTML links
 
-exe "hi! Ignore"         .s:fmt_none   .s:fg_none   .s:bg_none
+hi! link Ignore Normal
 "       *Ignore          left blank, hidden  |hl-Ignore|
 
 exe "hi! Error"          .s:fmt_bold   .s:fg_red    .s:bg_none
 "       *Error           any erroneous construct
 
-exe "hi! Todo"           .s:fmt_bold   .s:fg_magenta.s:bg_none
+hi! link Todo Normal
 "       *Todo            anything that needs extra attention; mostly the
 "                        keywords TODO FIXME and XXX
 "
@@ -686,21 +686,21 @@ hi! link vimUserFunc Function
 hi! link helpSpecial Special
 hi! link vimSet Normal
 hi! link vimSetEqual Normal
-exe "hi! vimCommentString"  .s:fmt_none    .s:fg_violet .s:bg_none
-exe "hi! vimCommand"        .s:fmt_none    .s:fg_yellow .s:bg_none
-exe "hi! vimCmdSep"         .s:fmt_bold    .s:fg_blue   .s:bg_none
+hi! link vimCommentString Normal
+hi! link vimCommand Normal
+hi! link vimCmdSep Normal
 exe "hi! helpExample"       .s:fmt_none    .s:fg_base1  .s:bg_none
 exe "hi! helpOption"        .s:fmt_none    .s:fg_cyan   .s:bg_none
 exe "hi! helpNote"          .s:fmt_none    .s:fg_magenta.s:bg_none
 exe "hi! helpVim"           .s:fmt_none    .s:fg_magenta.s:bg_none
 exe "hi! helpHyperTextJump" .s:fmt_undr    .s:fg_blue   .s:bg_none
 exe "hi! helpHyperTextEntry".s:fmt_none    .s:fg_green  .s:bg_none
-exe "hi! vimIsCommand"      .s:fmt_none    .s:fg_base00 .s:bg_none
-exe "hi! vimSynMtchOpt"     .s:fmt_none    .s:fg_yellow .s:bg_none
-exe "hi! vimSynType"        .s:fmt_none    .s:fg_cyan   .s:bg_none
-exe "hi! vimHiLink"         .s:fmt_none    .s:fg_blue   .s:bg_none
-exe "hi! vimHiGroup"        .s:fmt_none    .s:fg_blue   .s:bg_none
-exe "hi! vimGroup"          .s:fmt_undb    .s:fg_blue   .s:bg_none
+hi! link vimIsCommand Normal
+hi! link vimSynMtchOpt Normal
+hi! link vimSynType Normal
+hi! link vimHiLink Normal
+hi! link vimHiGroup Normal
+hi! link vimGroup Normal
 "}}}
 " diff highlighting "{{{
 " ---------------------------------------------------------------------
@@ -759,32 +759,31 @@ hi! link gitcommitUnmergedArrow  gitcommitUnmergedFile
 " }}}
 " html highlighting "{{{
 " ---------------------------------------------------------------------
-exe "hi! htmlTag"           .s:fmt_none .s:fg_base01 .s:bg_none
-exe "hi! htmlEndTag"        .s:fmt_none .s:fg_base01 .s:bg_none
-exe "hi! htmlTagN"          .s:fmt_bold .s:fg_base1  .s:bg_none
-exe "hi! htmlTagName"       .s:fmt_bold .s:fg_blue   .s:bg_none
-exe "hi! htmlSpecialTagName".s:fmt_ital .s:fg_blue   .s:bg_none
-exe "hi! htmlArg"           .s:fmt_none .s:fg_base00 .s:bg_none
-exe "hi! javaScript"        .s:fmt_none .s:fg_yellow .s:bg_none
+hi! link htmlTag Normal
+hi! link htmlEndTag Normal
+hi! link htmlTagN Normal
+hi! link htmlTagName Normal
+hi! link htmlSpecialTagName Normal
+hi! link htmlArg Normal
+hi! link javaScript Normal
 "}}}
 " perl highlighting "{{{
 " ---------------------------------------------------------------------
-exe "hi! perlHereDoc"    . s:fg_base1  .s:bg_back   .s:fmt_none
-exe "hi! perlVarPlain"   . s:fg_yellow .s:bg_back   .s:fmt_none
-exe "hi! perlStatementFileDesc". s:fg_cyan.s:bg_back.s:fmt_none
+hi! link perlHereDoc Normal
+hi! link perlVarPlain Normal
+hi! link perlStatementFileDesc Normal
 
 "}}}
 " tex highlighting "{{{
 " ---------------------------------------------------------------------
-exe "hi! texStatement"   . s:fg_cyan   .s:bg_back   .s:fmt_none
-exe "hi! texMathZoneX"   . s:fg_yellow .s:bg_back   .s:fmt_none
-exe "hi! texMathMatcher" . s:fg_yellow .s:bg_back   .s:fmt_none
-exe "hi! texMathMatcher" . s:fg_yellow .s:bg_back   .s:fmt_none
-exe "hi! texRefLabel"    . s:fg_yellow .s:bg_back   .s:fmt_none
+hi! link texStatement Normal
+hi! link texMathZoneX Normal
+hi! link texMathMatcher Normal
+hi! link texRefLabel Normal
 "}}}
 " ruby highlighting "{{{
 " ---------------------------------------------------------------------
-exe "hi! rubyDefine"     . s:fg_base1  .s:bg_back   .s:fmt_bold
+hi! link rubyDefine Normal
 "rubyInclude
 "rubySharpBang
 "rubyAccess
@@ -819,24 +818,24 @@ let hs_highlight_boolean=1
 " highlight delims, see the plugin referenced above
 let hs_highlight_delimiters=1
 
-exe "hi! cPreCondit". s:fg_orange.s:bg_none   .s:fmt_none
+hi! link cPreCondit Normal
 
-exe "hi! VarId"    . s:fg_blue   .s:bg_none   .s:fmt_none
-exe "hi! ConId"    . s:fg_yellow .s:bg_none   .s:fmt_none
-exe "hi! hsImport" . s:fg_magenta.s:bg_none   .s:fmt_none
-exe "hi! hsString" . s:fg_base00 .s:bg_none   .s:fmt_none
+hi! link VarId Normal
+hi! link ConId Normal
+hi! link hsImport Normal
+hi! link hsString Normal
 
-exe "hi! hsStructure"        . s:fg_cyan   .s:bg_none   .s:fmt_none
-exe "hi! hs_hlFunctionName"  . s:fg_blue   .s:bg_none
-exe "hi! hsStatement"        . s:fg_cyan   .s:bg_none   .s:fmt_none
-exe "hi! hsImportLabel"      . s:fg_cyan   .s:bg_none   .s:fmt_none
-exe "hi! hs_OpFunctionName"  . s:fg_yellow .s:bg_none   .s:fmt_none
-exe "hi! hs_DeclareFunction" . s:fg_orange .s:bg_none   .s:fmt_none
-exe "hi! hsVarSym"           . s:fg_cyan   .s:bg_none   .s:fmt_none
-exe "hi! hsType"             . s:fg_yellow .s:bg_none   .s:fmt_none
-exe "hi! hsTypedef"          . s:fg_cyan   .s:bg_none   .s:fmt_none
-exe "hi! hsModuleName"       . s:fg_green  .s:bg_none   .s:fmt_undr
-exe "hi! hsModuleStartLabel" . s:fg_magenta.s:bg_none   .s:fmt_none
+hi! link hsStructure Normal
+hi! link hs_hlFunctionName Normal
+hi! link hsStatement Normal
+hi! link hsImportLabel Normal
+hi! link hs_OpFunctionName Normal
+hi! link hs_DeclareFunction Normal
+hi! link hsVarSym Normal
+hi! link hsType Normal
+hi! link hsTypedef Normal
+hi! link hsModuleName Normal
+hi! link hsModuleStartLabel Normal
 hi! link hsImportParams      Delimiter
 hi! link hsDelimTypeExport   Delimiter
 hi! link hsModuleStartLabel  hsStructure
@@ -844,131 +843,229 @@ hi! link hsModuleWhereLabel  hsModuleStartLabel
 
 " following is for the haskell-conceal plugin
 " the first two items don't have an impact, but better safe
-exe "hi! hsNiceOperator"     . s:fg_cyan   .s:bg_none   .s:fmt_none
-exe "hi! hsniceoperator"     . s:fg_cyan   .s:bg_none   .s:fmt_none
+hi! link hsNiceOperator  Normal
+hi! link hsniceoperator  Normal
 
 "}}}
 " pandoc markdown syntax highlighting "{{{
 " ---------------------------------------------------------------------
 
 "PandocHiLink pandocNormalBlock
-exe "hi! pandocTitleBlock"               .s:fg_blue   .s:bg_none   .s:fmt_none
-exe "hi! pandocTitleBlockTitle"          .s:fg_blue   .s:bg_none   .s:fmt_bold
-exe "hi! pandocTitleComment"             .s:fg_blue   .s:bg_none   .s:fmt_bold
-exe "hi! pandocComment"                  .s:fg_base01 .s:bg_none   .s:fmt_ital
-exe "hi! pandocVerbatimBlock"            .s:fg_yellow .s:bg_none   .s:fmt_none
+hi! link pandocTitleBlock Normal
+hi! link pandocTitleBlockTitle Normal
+hi! link pandocTitleComment Normal
+hi! link pandocComment Normal
+hi! link pandocVerbatimBlock Normal
 hi! link pandocVerbatimBlockDeep         pandocVerbatimBlock
 hi! link pandocCodeBlock                 pandocVerbatimBlock
 hi! link pandocCodeBlockDelim            pandocVerbatimBlock
-exe "hi! pandocBlockQuote"               .s:fg_blue   .s:bg_none   .s:fmt_none
-exe "hi! pandocBlockQuoteLeader1"        .s:fg_blue   .s:bg_none   .s:fmt_none
-exe "hi! pandocBlockQuoteLeader2"        .s:fg_cyan   .s:bg_none   .s:fmt_none
-exe "hi! pandocBlockQuoteLeader3"        .s:fg_yellow .s:bg_none   .s:fmt_none
-exe "hi! pandocBlockQuoteLeader4"        .s:fg_red    .s:bg_none   .s:fmt_none
-exe "hi! pandocBlockQuoteLeader5"        .s:fg_base0  .s:bg_none   .s:fmt_none
-exe "hi! pandocBlockQuoteLeader6"        .s:fg_base01 .s:bg_none   .s:fmt_none
-exe "hi! pandocListMarker"               .s:fg_magenta.s:bg_none   .s:fmt_none
-exe "hi! pandocListReference"            .s:fg_magenta.s:bg_none   .s:fmt_undr
+hi! link pandocBlockQuote Normal
+hi! link pandocBlockQuoteLeader1 Normal
+hi! link pandocBlockQuoteLeader2 Normal
+hi! link pandocBlockQuoteLeader3 Normal
+hi! link pandocBlockQuoteLeader4 Normal
+hi! link pandocBlockQuoteLeader5 Normal
+hi! link pandocBlockQuoteLeader6 Normal
+hi! link pandocListMarker Normal
+hi! link pandocListReference Normal
 
 " Definitions
 " ---------------------------------------------------------------------
 let s:fg_pdef = s:fg_violet
-exe "hi! pandocDefinitionBlock"              .s:fg_pdef  .s:bg_none  .s:fmt_none
-exe "hi! pandocDefinitionTerm"               .s:fg_pdef  .s:bg_none  .s:fmt_stnd
-exe "hi! pandocDefinitionIndctr"             .s:fg_pdef  .s:bg_none  .s:fmt_bold
-exe "hi! pandocEmphasisDefinition"           .s:fg_pdef  .s:bg_none  .s:fmt_ital
-exe "hi! pandocEmphasisNestedDefinition"     .s:fg_pdef  .s:bg_none  .s:fmt_bldi
-exe "hi! pandocStrongEmphasisDefinition"     .s:fg_pdef  .s:bg_none  .s:fmt_bold
-exe "hi! pandocStrongEmphasisNestedDefinition"   .s:fg_pdef.s:bg_none.s:fmt_bldi
-exe "hi! pandocStrongEmphasisEmphasisDefinition" .s:fg_pdef.s:bg_none.s:fmt_bldi
-exe "hi! pandocStrikeoutDefinition"          .s:fg_pdef  .s:bg_none  .s:fmt_revr
-exe "hi! pandocVerbatimInlineDefinition"     .s:fg_pdef  .s:bg_none  .s:fmt_none
-exe "hi! pandocSuperscriptDefinition"        .s:fg_pdef  .s:bg_none  .s:fmt_none
-exe "hi! pandocSubscriptDefinition"          .s:fg_pdef  .s:bg_none  .s:fmt_none
+hi! link pandocDefinitionBlock Normal
+hi! link pandocDefinitionTerm Normal
+hi! link pandocDefinitionIndctr Normal
+hi! link pandocEmphasisDefinition Normal
+hi! link pandocEmphasisNestedDefinition Normal
+hi! link pandocStrongEmphasisDefinition Normal
+hi! link pandocStrongEmphasisNestedDefinition Normal
+hi! link pandocStrongEmphasisEmphasisDefinition Normal
+hi! link pandocStrikeoutDefinition Normal
+hi! link pandocVerbatimInlineDefinition Normal
+hi! link pandocSuperscriptDefinition Normal
+hi! link pandocSubscriptDefinition Normal
 
 " Tables
 " ---------------------------------------------------------------------
 let s:fg_ptable = s:fg_blue
-exe "hi! pandocTable"                        .s:fg_ptable.s:bg_none  .s:fmt_none
-exe "hi! pandocTableStructure"               .s:fg_ptable.s:bg_none  .s:fmt_none
+hi! link pandocTable Normal
+hi! link pandocTableStructure Normal
 hi! link pandocTableStructureTop             pandocTableStructre
 hi! link pandocTableStructureEnd             pandocTableStructre
-exe "hi! pandocTableZebraLight"              .s:fg_ptable.s:bg_base03.s:fmt_none
-exe "hi! pandocTableZebraDark"               .s:fg_ptable.s:bg_base02.s:fmt_none
-exe "hi! pandocEmphasisTable"                .s:fg_ptable.s:bg_none  .s:fmt_ital
-exe "hi! pandocEmphasisNestedTable"          .s:fg_ptable.s:bg_none  .s:fmt_bldi
-exe "hi! pandocStrongEmphasisTable"          .s:fg_ptable.s:bg_none  .s:fmt_bold
-exe "hi! pandocStrongEmphasisNestedTable"    .s:fg_ptable.s:bg_none  .s:fmt_bldi
-exe "hi! pandocStrongEmphasisEmphasisTable"  .s:fg_ptable.s:bg_none  .s:fmt_bldi
-exe "hi! pandocStrikeoutTable"               .s:fg_ptable.s:bg_none  .s:fmt_revr
-exe "hi! pandocVerbatimInlineTable"          .s:fg_ptable.s:bg_none  .s:fmt_none
-exe "hi! pandocSuperscriptTable"             .s:fg_ptable.s:bg_none  .s:fmt_none
-exe "hi! pandocSubscriptTable"               .s:fg_ptable.s:bg_none  .s:fmt_none
+hi! link pandocTableZebraLight Normal
+hi! link pandocTableZebraDark Normal
+hi! link pandocEmphasisTable Normal
+hi! link pandocEmphasisNestedTable Normal
+hi! link pandocStrongEmphasisTable Normal
+hi! link pandocStrongEmphasisNestedTable Normal
+hi! link pandocStrongEmphasisEmphasisTable Normal
+hi! link pandocStrikeoutTable Normal
+hi! link pandocVerbatimInlineTable Normal
+hi! link pandocSuperscriptTable Normal
+hi! link pandocSubscriptTable Normal
 
 " Headings
 " ---------------------------------------------------------------------
 let s:fg_phead = s:fg_orange
-exe "hi! pandocHeading"                      .s:fg_phead .s:bg_none.s:fmt_bold
-exe "hi! pandocHeadingMarker"                .s:fg_yellow.s:bg_none.s:fmt_bold
-exe "hi! pandocEmphasisHeading"              .s:fg_phead .s:bg_none.s:fmt_bldi
-exe "hi! pandocEmphasisNestedHeading"        .s:fg_phead .s:bg_none.s:fmt_bldi
-exe "hi! pandocStrongEmphasisHeading"        .s:fg_phead .s:bg_none.s:fmt_bold
-exe "hi! pandocStrongEmphasisNestedHeading"  .s:fg_phead .s:bg_none.s:fmt_bldi
-exe "hi! pandocStrongEmphasisEmphasisHeading".s:fg_phead .s:bg_none.s:fmt_bldi
-exe "hi! pandocStrikeoutHeading"             .s:fg_phead .s:bg_none.s:fmt_revr
-exe "hi! pandocVerbatimInlineHeading"        .s:fg_phead .s:bg_none.s:fmt_bold
-exe "hi! pandocSuperscriptHeading"           .s:fg_phead .s:bg_none.s:fmt_bold
-exe "hi! pandocSubscriptHeading"             .s:fg_phead .s:bg_none.s:fmt_bold
+hi! link pandocHeading Normal
+hi! link pandocHeadingMarker Normal
+hi! link pandocEmphasisHeading Normal
+hi! link pandocEmphasisNestedHeading Normal
+hi! link pandocStrongEmphasisHeading Normal
+hi! link pandocStrongEmphasisNestedHeading Normal
+hi! link pandocStrongEmphasisEmphasisHeading Normal
+hi! link pandocStrikeoutHeading Normal
+hi! link pandocVerbatimInlineHeading Normal
+hi! link pandocSuperscriptHeading Normal
+hi! link pandocSubscriptHeading Normal
 
 " Links
 " ---------------------------------------------------------------------
-exe "hi! pandocLinkDelim"                .s:fg_base01 .s:bg_none   .s:fmt_none
-exe "hi! pandocLinkLabel"                .s:fg_blue   .s:bg_none   .s:fmt_undr
-exe "hi! pandocLinkText"                 .s:fg_blue   .s:bg_none   .s:fmt_undb
-exe "hi! pandocLinkURL"                  .s:fg_base00 .s:bg_none   .s:fmt_undr
-exe "hi! pandocLinkTitle"                .s:fg_base00 .s:bg_none   .s:fmt_undi
-exe "hi! pandocLinkTitleDelim"           .s:fg_base01 .s:bg_none   .s:fmt_undi   .s:sp_base00
-exe "hi! pandocLinkDefinition"           .s:fg_cyan   .s:bg_none   .s:fmt_undr   .s:sp_base00
-exe "hi! pandocLinkDefinitionID"         .s:fg_blue   .s:bg_none   .s:fmt_bold
-exe "hi! pandocImageCaption"             .s:fg_violet .s:bg_none   .s:fmt_undb
-exe "hi! pandocFootnoteLink"             .s:fg_green  .s:bg_none   .s:fmt_undr
-exe "hi! pandocFootnoteDefLink"          .s:fg_green  .s:bg_none   .s:fmt_bold
-exe "hi! pandocFootnoteInline"           .s:fg_green  .s:bg_none   .s:fmt_undb
-exe "hi! pandocFootnote"                 .s:fg_green  .s:bg_none   .s:fmt_none
-exe "hi! pandocCitationDelim"            .s:fg_magenta.s:bg_none   .s:fmt_none
-exe "hi! pandocCitation"                 .s:fg_magenta.s:bg_none   .s:fmt_none
-exe "hi! pandocCitationID"               .s:fg_magenta.s:bg_none   .s:fmt_undr
-exe "hi! pandocCitationRef"              .s:fg_magenta.s:bg_none   .s:fmt_none
+hi! link pandocLinkDelim Normal
+hi! link pandocLinkLabel Normal
+hi! link pandocLinkText Normal
+hi! link pandocLinkURL Normal
+hi! link pandocLinkTitle Normal
+hi! link pandocLinkTitleDelim Normal
+hi! link pandocLinkDefinition Normal
+hi! link pandocLinkDefinitionID Normal
+hi! link pandocImageCaption Normal
+hi! link pandocFootnoteLink Normal
+hi! link pandocFootnoteDefLink Normal
+hi! link pandocFootnoteInline Normal
+hi! link pandocFootnote Normal
+hi! link pandocCitationDelim Normal
+hi! link pandocCitation Normal
+hi! link pandocCitationID Normal
+hi! link pandocCitationRef Normal
 
 " Main Styles
 " ---------------------------------------------------------------------
-exe "hi! pandocStyleDelim"               .s:fg_base01 .s:bg_none  .s:fmt_none
-exe "hi! pandocEmphasis"                 .s:fg_base0  .s:bg_none  .s:fmt_ital
-exe "hi! pandocEmphasisNested"           .s:fg_base0  .s:bg_none  .s:fmt_bldi
-exe "hi! pandocStrongEmphasis"           .s:fg_base0  .s:bg_none  .s:fmt_bold
-exe "hi! pandocStrongEmphasisNested"     .s:fg_base0  .s:bg_none  .s:fmt_bldi
-exe "hi! pandocStrongEmphasisEmphasis"   .s:fg_base0  .s:bg_none  .s:fmt_bldi
-exe "hi! pandocStrikeout"                .s:fg_base01 .s:bg_none  .s:fmt_revr
-exe "hi! pandocVerbatimInline"           .s:fg_yellow .s:bg_none  .s:fmt_none
-exe "hi! pandocSuperscript"              .s:fg_violet .s:bg_none  .s:fmt_none
-exe "hi! pandocSubscript"                .s:fg_violet .s:bg_none  .s:fmt_none
+hi! link pandocStyleDelim Normal
+hi! link pandocEmphasis Normal
+hi! link pandocEmphasisNested Normal
+hi! link pandocStrongEmphasis Normal
+hi! link pandocStrongEmphasisNested Normal
+hi! link pandocStrongEmphasisEmphasis Normal
+hi! link pandocStrikeout Normal
+hi! link pandocVerbatimInline Normal
+hi! link pandocSuperscript Normal
+hi! link pandocSubscript Normal
 
-exe "hi! pandocRule"                     .s:fg_blue   .s:bg_none  .s:fmt_bold
-exe "hi! pandocRuleLine"                 .s:fg_blue   .s:bg_none  .s:fmt_bold
-exe "hi! pandocEscapePair"               .s:fg_red    .s:bg_none  .s:fmt_bold
-exe "hi! pandocCitationRef"              .s:fg_magenta.s:bg_none   .s:fmt_none
-exe "hi! pandocNonBreakingSpace"         . s:fg_red   .s:bg_none  .s:fmt_revr
+hi! link pandocRule Normal
+hi! link pandocRuleLine Normal
+hi! link pandocEscapePair Normal
+hi! link pandocCitationRef Normal
+hi! link pandocNonBreakingSpace Normal
 hi! link pandocEscapedCharacter          pandocEscapePair
 hi! link pandocLineBreak                 pandocEscapePair
 
 " Embedded Code
 " ---------------------------------------------------------------------
-exe "hi! pandocMetadataDelim"            .s:fg_base01 .s:bg_none   .s:fmt_none
-exe "hi! pandocMetadata"                 .s:fg_blue   .s:bg_none   .s:fmt_none
-exe "hi! pandocMetadataKey"              .s:fg_blue   .s:bg_none   .s:fmt_none
-exe "hi! pandocMetadata"                 .s:fg_blue   .s:bg_none   .s:fmt_bold
+hi! link pandocMetadataDelim Normal
+hi! link pandocMetadata Normal
+hi! link pandocMetadataKey Normal
+hi! link pandocMetadata Normal
 hi! link pandocMetadataTitle             pandocMetadata
 
+"}}}
+" cmake highlighting "{{{
+" ---------------------------------------------------------------------
+
+hi! link cmakeKWExternalProject Normal
+hi! link cmakeKWadd_compile_options Normal
+hi! link cmakeKWadd_custom_command Normal
+hi! link cmakeKWadd_custom_target Normal
+hi! link cmakeKWadd_definitions Normal
+hi! link cmakeKWadd_dependencies Normal
+hi! link cmakeKWadd_executable Normal
+hi! link cmakeKWadd_library Normal
+hi! link cmakeKWadd_subdirectory Normal
+hi! link cmakeKWadd_test Normal
+hi! link cmakeKWbuild_command Normal
+hi! link cmakeKWbuild_name Normal
+hi! link cmakeKWcmake_host_system_information Normal
+hi! link cmakeKWcmake_minimum_required Normal
+hi! link cmakeKWcmake_parse_arguments Normal
+hi! link cmakeKWcmake_policy Normal
+hi! link cmakeKWconfigure_file Normal
+hi! link cmakeKWcreate_test_sourcelist Normal
+hi! link cmakeKWctest_build Normal
+hi! link cmakeKWctest_configure Normal
+hi! link cmakeKWctest_coverage Normal
+hi! link cmakeKWctest_memcheck Normal
+hi! link cmakeKWctest_run_script Normal
+hi! link cmakeKWctest_start Normal
+hi! link cmakeKWctest_submit Normal
+hi! link cmakeKWctest_test Normal
+hi! link cmakeKWctest_update Normal
+hi! link cmakeKWctest_upload Normal
+hi! link cmakeKWdefine_property Normal
+hi! link cmakeKWenable_language Normal
+hi! link cmakeKWexec_program Normal
+hi! link cmakeKWexecute_process Normal
+hi! link cmakeKWexport Normal
+hi! link cmakeKWexport_library_dependencies Normal
+hi! link cmakeKWfile Normal
+hi! link cmakeKWfind_file Normal
+hi! link cmakeKWfind_library Normal
+hi! link cmakeKWfind_package Normal
+hi! link cmakeKWfind_path Normal
+hi! link cmakeKWfind_program Normal
+hi! link cmakeKWfltk_wrap_ui Normal
+hi! link cmakeKWforeach Normal
+hi! link cmakeKWfunction Normal
+hi! link cmakeKWget_cmake_property Normal
+hi! link cmakeKWget_directory_property Normal
+hi! link cmakeKWget_filename_component Normal
+hi! link cmakeKWget_property Normal
+hi! link cmakeKWget_source_file_property Normal
+hi! link cmakeKWget_target_property Normal
+hi! link cmakeKWget_test_property Normal
+hi! link cmakeKWif Normal
+hi! link cmakeKWinclude Normal
+hi! link cmakeKWinclude_directories Normal
+hi! link cmakeKWinclude_external_msproject Normal
+hi! link cmakeKWinclude_guard Normal
+hi! link cmakeKWinstall Normal
+hi! link cmakeKWinstall_files Normal
+hi! link cmakeKWinstall_programs Normal
+hi! link cmakeKWinstall_targets Normal
+hi! link cmakeKWlist Normal
+hi! link cmakeKWload_cache Normal
+hi! link cmakeKWload_command Normal
+hi! link cmakeKWmacro Normal
+hi! link cmakeKWmake_directory Normal
+hi! link cmakeKWmark_as_advanced Normal
+hi! link cmakeKWmath Normal
+hi! link cmakeKWmessage Normal
+hi! link cmakeKWoption Normal
+hi! link cmakeKWproject Normal
+hi! link cmakeKWremove Normal
+hi! link cmakeKWseparate_arguments Normal
+hi! link cmakeKWset Normal
+hi! link cmakeKWset_directory_properties Normal
+hi! link cmakeKWset_property Normal
+hi! link cmakeKWset_source_files_properties Normal
+hi! link cmakeKWset_target_properties Normal
+hi! link cmakeKWset_tests_properties Normal
+hi! link cmakeKWsource_group Normal
+hi! link cmakeKWstring Normal
+hi! link cmakeKWsubdirs Normal
+hi! link cmakeKWtarget_compile_definitions Normal
+hi! link cmakeKWtarget_compile_features Normal
+hi! link cmakeKWtarget_compile_options Normal
+hi! link cmakeKWtarget_include_directories Normal
+hi! link cmakeKWtarget_link_libraries Normal
+hi! link cmakeKWtarget_sources Normal
+hi! link cmakeKWtry_compile Normal
+hi! link cmakeKWtry_run Normal
+hi! link cmakeKWunset Normal
+hi! link cmakeKWuse_mangled_mesa Normal
+hi! link cmakeKWvariable_requires Normal
+hi! link cmakeKWvariable_watch Normal
+hi! link cmakeKWwhile Normal
+hi! link cmakeKWwrite_file Normal
 "}}}
 " Utility autocommand "{{{
 " ---------------------------------------------------------------------
